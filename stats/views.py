@@ -12,5 +12,6 @@ def stats(request):
     return render(request, 'stats/stats.html')
 
 
-def check(request):
-    return render(request, 'stats/check.html')
+def graphs(request):
+    return render(request, 'stats/graphs.html')
+
