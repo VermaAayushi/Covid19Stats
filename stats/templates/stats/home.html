@@ -1,32 +1,33 @@
+
 <!DOCTYPE html>
 <html>
     <title>Covid 19 Statistics</title>
     <head >
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
 <meta charset="utf-8">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+<nav style="min-height: 40px; font-size: 20px;   padding-left:400px; align-items:center;
+padding-right:100px; background-color: transparent;" class="navbar navbar-expand-md navbar-dark bg-dark">
 
-<nav style="min-height: 80px; font-size: 20px;   padding-left:50px;
-padding-right:50px;" class="navbar navbar-expand-md navbar-light bg-light">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-          </li>
-      
-      <ul class="navbar-nav">
-          <li class="nav-item">
-              <a class="nav-link" href="#">Tables</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Graphs</a>
-          </li>
-      </ul>
+<div style="background-color: transparent;" class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item" >
+            <a class="nav-link" href="{% url 'home' %}" style="padding: 40px">Home</a>
+        </li>
+
+    <ul class="navbar-nav" >
+        <li class="nav-item" >
+            <a class="nav-link" href="{% url 'stats' %}" style="padding: 40px;">Tables</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{% url 'graphs' %}" style="padding: 40px">Graphs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#resources" style="padding: 40px">Resources</a>
+      </li>
     </ul>
-  </div>
+  </ul>
+</div>
 </nav>
  
 <title>Covid 19</title>
@@ -13124,15 +13125,27 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body>
-  <div>
-    <h1 id="COVID-19-Interactive-Analysis-Dashboard" style="text-align: center;color: black;font-family: 'Cinzel', serif;">COVID-19</h1>
-  </div>
+<body style=" background-color: #1e1e1e">
 
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
+<div style="background-color: #1e1e1e; margin: 0%;"  class="everything">
+<div style="width: 100%;
+position: absolute;
+color:#000066;">
+
+
+<div>
+  <h1 id="COVID-19-Interactive-Analysis-Dashboard" style="text-align: center;color: white; font-size: 100px; padding-top: 15%; font-family: 'Cinzel', serif;opacity: 0.5;">COVID-19</h1>
+</div>
+
+</div>
+{% load static %}
+<img style="width: 100%; height: 150%;" src="{%  static 'stats/broo.png' %}">
+ 
+
+  <div  tabindex="-1" id="notebook" class="border-box-sizing">
       
         
-  <div class="cell border-box-sizing text_cell rendered"><div class="input_prompt">
+  <div class="cell border-box-sizing text_cell rendered"  style ="width: 100%; "><div class="input_prompt">
   </div>
  
   </div>
@@ -13140,7 +13153,7 @@ div#notebook {
   
   
   
-  <div class="cell border-box-sizing code_cell rendered">
+  <div class="cell border-box-sizing code_cell rendered" >
   <div class="input" style="display:none">
   <div class="prompt input_prompt">In&nbsp;[18]:</div>
   <div class="inner_cell">
@@ -13178,9 +13191,9 @@ div#notebook {
   <div class="output">
   
   
-  <div class="output_area">
+  <div style="padding-left: 100px; width: 100%;" class="output_area">
   
-      <div class="prompt output_prompt"Map:</div>
+      <div class="prompt output_prompt"Map:>
   
   
   
@@ -13222,48 +13235,53 @@ div#notebook {
 </body>
 
 </html>
-
-<br>
   
-<div class="resources display" id="resources" style="width: 100%;
-position: absolute;
-font-size: xx-large;
-text-align: center;
-font-family: 'Lato', sans-serif;
-margin-top: 25%;">
+  <div style="width: 100%;
+    margin-top: 5%;
+    margin-left: 20px;
+    position: absolute;
+    color:#000066;">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+  
+  <h1 id="resources" style="text-align: center;color: white; font-family: 'Special Elite', cursive; font-size: 50px; " >RESOURCES</h1>
+<br>
+<br>
+<br>
 
 
-
-  <div  class="col-lg-12">
-    <div class="alert alert-success" role="alert">
-        <h1 id="COVID-19-Interactive-Analysis-Dashboard" style="text-align: center" >Resources</h1>
+  <div class="row">
+    {% for resource in resources %}
+    <div  class="col-lg-4 col-md-6">
+   
+      {% if project.url %}
+      <a href="{{ project.url }}">
+        <img src="{{ resource.img.url }}" class="img-fluid mb-2" style="color: #000000;">
+      </a>
+      {% else %}
+   
+      <img src="{{  resource.img.url }}" class="img-fluid mb-2"style="color: white;">
+      {% endif %}
+      <h3 style="color: #0DFFEF; font-family: 'Cinzel', serif; font-size: 24px;">{{ resource.title }}</h3>
+      <p style="color: white;font-family: 'Cinzel', serif; font-size: 16px;">{{ resource.description }}</p>
+   
+    </div>
+    {% endfor %}
    </div>
+    </div>
+    <div style="width: 100%; position: absolute;"></div>
+    
+  
+    {% load static %}
+    <img style="width: 100%; height: 80%;  opacity: 0.5;" src="{% static 'stats/novel-coronavirus-1500x841.png' %}">
+  
+  </div>
+   
+  </div>
+  
 
 
-<hr>
-<div class="row">
-  <img class="img-back" src="covidparticle.jpg" style="width: 100%;
-    height: auto;">
- {% for resource in resources %}
- <div class="col-lg-4 col-md-6">
 
-   {% if project.url %}
-   <a href="{{ project.url }}">
-     <img src="{{ resource.img.url }}" class="img-fluid mb-2" style="color: #000000;">
-   </a>
-   {% else %}
-
-   <img src="{{  resource.img.url }}" class="img-fluid mb-2"style="color: #000000;">
-   {% endif %}
-   <h3 style="color: #000000;">{{ resource.title }}</h3>
-   <p style="color: #000000;">{{ resource.description }}</p>
-
- </div>
- {% endfor %}
-</div>
-
-</div>
-</div>
 
 
 

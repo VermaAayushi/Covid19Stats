@@ -2,7 +2,53 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> 
+  <nav style=" font-size: 20px;   padding-left:400px; align-items:center;
+  padding-right:100px; background-color: transparent;" class="navbar navbar-expand-md navbar-light bg-light">
+  
+  <div style="background-color: transparent;" class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+          <li class="nav-item" >
+              <a class="nav-link" href="{% url 'home' %}" style="padding: 40px">Home</a>
+          </li>
+  
+      <ul class="navbar-nav" >
+          <li class="nav-item" >
+              <a class="nav-link" href="{% url 'stats' %}" style="padding: 40px;">Tables</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'graphs' %}" style="padding: 40px">Graphs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resources" style="padding: 40px">Resources</a>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  </nav>
 
+
+<div style="width: 100%;
+  margin-top: 5%;
+  margin-left: 20px;
+  position: absolute;
+  color:#000066;">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  
+  <h1 id="COVID-19-Interactive-Analysis-Dashboard" style="color: black; text-align: center; padding-top: 25%;font-family: 'Monoton', cursive; font-size: 100px;">COVID-19 ANALYSIS DASHBOARD<a class="anchor-link" href="#COVID-19-Interactive-Analysis-Dashboard">&#182;</a></h1>
+
+</div>
+
+
+
+{% load static %}
+<img style="width: 100%; height: 150%;" src="{%  static 'stats/maybestats.jpg' %}">
+
+
+
+
+<div class= tables style="background-color: #000;" >
 <title>covid_19_dashboard</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
@@ -13094,14 +13140,14 @@ div#notebook {
     });
     </script>
     <!-- End of mathjax configuration --></head>
-<body style="background-color: black">
+<body style="background-color: white">
   <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container" style="background-color: black">
+    <div style="background-color: white">
 
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="COVID-19-Interactive-Analysis-Dashboard" style="color: white; text-align: center">COVID-19 Interactive Analysis Dashboard<a class="anchor-link" href="#COVID-19-Interactive-Analysis-Dashboard">&#182;</a></h1>
+
+<div style="width: 100%; position: absolute;"></div>
 </div>
 </div>
 </div>
@@ -13168,7 +13214,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt" style="background-color: black; color: white">Confirmed Cases:</div>
+    <div class="prompt output_prompt" style="background-color: white; color: black">Confirmed Cases:</div>
 
 
 
@@ -13365,7 +13411,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt" style="background-color: black; color: white">Recovered Cases:</div>
+    <div class="prompt output_prompt" style="background-color: white; color: black">Recovered Cases:</div>
 
 
 
@@ -13562,7 +13608,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt" style="background-color: black; color: white">Death:</div>
+    <div class="prompt output_prompt" style="background-color: white; color: black">Death:</div>
 
 
 
@@ -13759,7 +13805,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt" style="background-color: black; color: white">Country:</div>
+    <div class="prompt output_prompt" style="background-color: white; color: black">Country:</div>
 
 
 
@@ -14230,5 +14276,6 @@ var element = $('#9664d14d-ca54-4550-ab98-60cf457d9ff1');
 </div>
 </div>
 
+</div>
 </div>
 </html>
