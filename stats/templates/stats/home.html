@@ -13095,7 +13095,7 @@ div#notebook {
     
     
     <!-- End of mathjax configuration --></head>
-<body style=" background-color: #dc9c94; margin: 4%;">
+<body style=" background-color:#f46c74; margin: 2%;">
   <div class="timestamp" style="text-align: right;">
     <h5>Last updated on : 30th November, 2020</h5>
   </div>
@@ -13140,7 +13140,7 @@ color:#000066;">
 
 
 {% load static %}
-<img style="width: 100%; height: 150%;" src="{%  static 'stats/forstats1.jpg' %}">
+<img style="width: 100%; height: 150%;" src="{%  static 'stats/neeche.png' %}">
 
     
 
@@ -13217,7 +13217,7 @@ color:#000066;">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
   
-  <h1 id="resources" style="text-align: center;color: white; font-family: 'Special Elite', cursive; font-size: 50px; " >RESOURCES</h1>
+  <h1 id="resources" style="text-align: center;color: black; font-family: 'Special Elite', cursive; font-size: 70px; opacity: 0.5;" >RESOURCES</h1>
 <br>
 <br>
 <br>
@@ -13227,16 +13227,16 @@ color:#000066;">
     {% for resource in resources %}
     <div  class="col-lg-4 col-md-6">
    
-      {% if project.url %}
-      <a href="{{ project.url }}">
+      {% if resource.url %}
+      <a href="{{ resource.url }}">
         <img src="{{ resource.img.url }}" class="img-fluid mb-2" style="color: #ffffff;">
       </a>
       {% else %}
    
       <img src="{{  resource.img.url }}" class="img-fluid mb-2"style="color: white;">
       {% endif %}
-      <h3 style="color: #0DFFEF; font-family: 'Cinzel', serif; font-size: 24px;">{{ resource.title }}</h3>
-      <p style="color: white;font-family: 'Cinzel', serif; font-size: 16px;">{{ resource.description }}</p>
+      <h3 style="color: black; font-family: 'Cinzel', serif; font-size: 24px;">{{ resource.title }}</h3>
+      <p style="color: black;font-family: 'Cinzel', serif; font-size: 16px;">{{ resource.description }}</p>
    
     </div>
     {% endfor %}
@@ -13246,7 +13246,9 @@ color:#000066;">
     
   
     {% load static %}
-    <img style="width: 100%; height: 80%;" src="{% static 'stats/Covid-19-virus.jpg' %}">
+    <img style="width: 100%; height: 80%;" src="{% static 'stats/uppar.png' %}">
+    {% load static %}
+    <img style="width: 100%; height: 80%;" src="{% static 'stats/uppar2.png' %}">
   
   </div>
   </div>
